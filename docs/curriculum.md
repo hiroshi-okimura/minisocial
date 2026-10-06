@@ -51,8 +51,8 @@ SNS を題材にするのは、Rails の重要な機能を「必要だから使�
 
 | 技術 | 採用バージョン | 備考 |
 |---|---|---|
-| Ruby | **4.0.x**（確認時点の最新は 4.0.7） | 現在の安定版。3.4 系も保守中 |
-| Ruby on Rails | **8.1.x**（確認時点の最新は 8.1.4） | Ruby 3.2 以上が必要。Ruby 4.0 への対応修正は 8.1.2 で入っている |
+| Ruby | **3.4.x**（このリポジトリでは 3.4.10 を `mise.toml` で固定） | 現在の安定版の1つ（2026-10-05 決定）。最新の 4.0 系ではなく、gem の互換性問題に当たりにくい 3.4 系を選んだ |
+| Ruby on Rails | **8.1.x**（確認時点の最新は 8.1.4） | Ruby 3.2 以上が必要 |
 | MySQL | **8.4 LTS**（確認時点の最新は 8.4.11） | 長期サポート版。MySQL 8.0 は 2026年4月に EOL |
 | MySQL 接続アダプタ | trilogy または mysql2 | Rails 8 の `rails new -d mysql` が生成する Gemfile に従う（第2章で確認） |
 | RSpec | rspec-rails 8.0.x | |
@@ -69,7 +69,7 @@ SNS を題材にするのは、Rails の重要な機能を「必要だから使�
 
 | | 現在 | 必要な対応 |
 |---|---|---|
-| Ruby | 3.3.5（mise で管理） | mise で 4.0.x を追加インストール |
+| Ruby | 3.3.5（mise で管理） | 3.4.10 をインストールし、`mise.toml` でこのリポジトリに固定（2026-10-05 対応済み） |
 | Rails | 7.1.5 | 8.1.x をインストール |
 | MySQL | 未インストール | Homebrew で `mysql@8.4` をインストール（`mysql` という formula は 26.7.0 で、8.4 LTS とは別の系列なので注意） |
 
@@ -328,7 +328,6 @@ Rails を使う開発チームに参加して、既存コードを読み、小�
 - 各 gem の最新版：RubyGems.org API（`https://rubygems.org/api/v1/gems/<name>.json`、2026-10-02 確認）
   - rails 8.1.4 / rspec-rails 8.0.4 / factory_bot_rails 6.5.1 / capybara 3.40.0 / turbo-rails 2.0.23 / stimulus-rails 1.3.4 / trilogy 2.13.0 / mysql2 0.5.7 / pagy 43.6.3 / kaminari 1.2.2
   - Rails 8.1.4 の Ruby 要件（`>= 3.2.0`）：RubyGems.org API v2
-- Rails 8.1 と Ruby 4.0 の互換性：[Ruby 4.0 is Here - What It Actually Means for Your Rails App](https://buttondown.com/WagnerMatos/archive/ruby-40-is-here-what-it-actually-means-for-your/)
 - MySQL 8.4 LTS の最新版とサポート期間：[MySQL — endoflife.date](https://endoflife.date/mysql)、[MySQL July 2026 GA Releases Now Available](https://blogs.oracle.com/mysql/mysql-july-2026-ga-releases-now-available)
 - Homebrew の MySQL formula：`brew info mysql@8.4` / `brew info mysql`（2026-10-02 確認：8.4.11 / 26.7.0）
 - ローカル環境：`ruby -v`、`rails -v`、`which mysql`（2026-10-02 確認）
